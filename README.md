@@ -65,12 +65,37 @@ La multiplicación de matrices se realiza de la siguiente manera:
     │ F(n-2)  │     │         F(n-2)        │
     └───   ───┘     └───                 ───┘
 
-Esto se utiliza para buscar el primer término de la secuencia de Tribonacci. 
+Para calcular los términos de la secuencia de Tribonacci debemos realizar las potencias de A dependiendo del número de orden a obtener.
 
-Para calcular los siguientes términos debemos realizar las potencias de A dependiendo del número de orden a obtener.
+A<sup>**_n-3_**</sup> para obtener el orden **_n_** de la secuencia de Tribonacci.
 
-A<sup>n</sup> para obtener el orden n de la secuencia de Tribonacci.
+El exponente **_n-3_** se elige porque la secuencia de Tribonacci se define a partir de los primeros tres términos F(0), F(1), F(2), y al elevar la matriz a la potencia **_n-3_**, estamos calculando las iteraciones adicionales hasta llegar al término F(**_n_**).
 
+El cálculo de A<sup>**_n-3_**</sup> para el orden **2023202320232023** consume mucho tiempo, por lo que es necesario recurrir al cáculo de la exponenciación rápida.
 
+El algoritmo se basa en la propiedad de que cualquier potencia de una matriz se puede expresar como una combinación de potencias de orden 2, aplicando repetidas veces la propiedad A<sup>**_mn_**</sup> = (A<sup>**_m_**</sup>)<sup>**_n_**</sup>.
+
+1. **Inicio**:
+
+      Se inicia el resultado con la matriz identidad y se establece el exponente al que se desea elevar la matriz.
+
+2. **Bucle**:
+
+      En cada iteración se verifica si el bit más significativo del exponente es 1. Si es 1, multiplica la matriz resultado por la matriz original A.
+
+      Actualiza la matriz A multiplicándola por sí misma.
+
+      Divide el exponente por 2.
+
+3. **Resultado Final**:
+
+      Después de salir del bucle la matriz resultado contendrá A<sup>**_exponente_**</sup>
+
+El resultado de la potencia luego se multiplica por el vector inicial **[2025, 2024, 2023]** para obtener los términos correspondientes de la secuencia de Tribonacci.
+
+Por último explicaré el uso del operador módulo **%** para obtener los últimos 4 dígitos de un número, y así se evita el desbordamiento y se simplican los resultados.
+
+Cuando se realiza una operación como a x b mod 10000, el resultado será el resto de la división de (a x b) por 10000. Así se obtienen los últimos 4 dígitos del resultado.
+Esto es útil cuando trabajamos con números muy grandes y sólo estamos interesados en una cantidad específica de dígitos del resultado.
 
 
