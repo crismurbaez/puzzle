@@ -1,3 +1,5 @@
+    ### Solución al puzzle
+    
     Los últimos cuatro dígitos del orden 2023202320232023 son: 3363
 
     La lógica de la solución es la siguiente:
