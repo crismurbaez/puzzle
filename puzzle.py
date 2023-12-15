@@ -63,7 +63,7 @@ def tribonacci(orden, digit):
     return result
 
 
-# Calcular el Tribonacci para el orden 2023202320232023
+# Se calcula el Tribonacci
 orden = 2023202320232023
 digit = 4
 resultado = tribonacci(orden, digit)
